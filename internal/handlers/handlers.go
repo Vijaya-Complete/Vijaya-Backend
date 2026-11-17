@@ -1,5 +1,9 @@
 // Package handlers contains all HTTP handlers for the Vijaya API.
 // Each sub-package registers its own routes via RegisterRoutes.
+// Handlers are responsible for parsing requests, validating input, calling the appropriate service methods, and returning JSON responses with appropriate HTTP status codes.
+// Handlers should not contain business logic; that belongs in the services layer.
+// Handlers should also not directly interact with the database; that belongs in the storage layer.
+// Handlers should use the httpx package for consistent JSON responses and error handling.
 package handlers
 
 import (
